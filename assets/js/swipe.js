@@ -10,8 +10,8 @@ class SwipeCarousel extends Carousel {
   }
   _swipeEnd(e) {
     this.swipeEndX = e.changedTouches[0].pageX;
-    if (this.swipeStart - this.swipeEndX < -100) this.prev();
-    if (this.swipeStart - this.swipeEndX > 100) this.next();
+    this.swipeStartX - this.swipeEndX > 100 && this.next();
+    this.swipeStartX - this.swipeEndX < -100 && this.prev();
   }
 }
 export default SwipeCarousel;
